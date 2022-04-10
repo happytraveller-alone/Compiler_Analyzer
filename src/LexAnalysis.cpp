@@ -199,7 +199,7 @@ void initNode()
  *更改作者：谢远峰
  *完成情况：DONE
  */
-void createNewNode(char const* content,char const* descirbe, int type, int addr, int line)
+void createNewNode(char const* content, char const* descirbe, int type, int addr, int line)
 {
     NormalNode* p = normalHead;
     NormalNode* temp = new NormalNode();
@@ -227,7 +227,7 @@ void createNewNode(char const* content,char const* descirbe, int type, int addr,
  *更改作者：谢远峰
  *完成情况：DONE
  */
-void createNewError(char const* content,char const* descirbe, int type, int line)
+void createNewError(char const* content, char const* descirbe, int type, int line)
 {
     ErrorNode* p = errorHead;
     ErrorNode* temp = new ErrorNode();
@@ -291,7 +291,7 @@ int createNewIden(char const* content, char const* descirbe, int type, int line)
  */
 void printNode1()
 {
-    filecifa.open("OutputFile\\Filecifa.txt", ios::out);
+    filecifa.open("output//Filecifa.txt", ios::out);
     filecifa << "TOKEN:" << endl << "[ ";
     NormalNode* p = normalHead;
     p = p->next;
@@ -340,7 +340,7 @@ void printNode2()
     NormalNode* p = normalHead;
     p = p->next;
 
-    filecifa.open("OutputFile\\Filecifa.txt", ios::app);
+    filecifa.open("output//Filecifa.txt", ios::app);
     filecifa << endl << endl;
     while (p != NULL)
     {
@@ -385,7 +385,7 @@ void printNode2()
 void printNodeLink()
 {
     fstream Nodelink;
-    Nodelink.open("OutputFile\\TokenAnalysis.txt", ios::out);
+    Nodelink.open("output//TokenAnalysis.txt", ios::out);
     NormalNode* p = normalHead;
     p = p->next;
     Nodelink << "***********************词法分析表************************" << endl;
@@ -418,7 +418,7 @@ void printNodeLink()
 void printErrorLink()
 {
     fstream Errorlink;
-    Errorlink.open("OutputFile\\ErrorAnalysis.txt", ios::out);
+    Errorlink.open("output//ErrorAnalysis.txt", ios::out);
     ErrorNode* p = errorHead;
     p = p->next;
     Errorlink << "***********************错误表************************" << endl;
@@ -435,7 +435,7 @@ void printErrorLink()
 void printIdentLink()
 {
     fstream IdentLink;
-    IdentLink.open("OutputFile\\IdenList.txt", ios::out);
+    IdentLink.open("output//IdenList.txt", ios::out);
     IdentiferNode* p = idenHead;
     p = p->next;
     IdentLink << "***********************符号表************************" << endl;
@@ -501,7 +501,7 @@ void scanner()
 
     // TODO:更改待读取文件
     FILE* infile;
-    infile = fopen("..\\input\\test3.txt", "r");
+    infile = fopen("input//test3.txt", "r");
     while (!infile)
     {
         printf("打开文件失败！\n");

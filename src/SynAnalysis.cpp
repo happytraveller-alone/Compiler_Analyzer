@@ -231,10 +231,11 @@ void initGrammer()
     int codeNum;
     int line = 1;
     int count = 0; //是文法读入过程中当前行读到了第几个文法单元
-    infile = fopen("..\\input\\wenfa.txt", "r");
+    infile = fopen("input//wenfa.txt", "r");
     if (!infile)
     {
         printf("文法打开失败！\n");
+        exit(-1);
         return;
     }
     initSpecialMapping();
@@ -298,7 +299,7 @@ void initGrammer()
     procNum = line;
 
     fstream outfile0;
-    outfile0.open("..\\output\\grammar.txt", ios::out);
+    outfile0.open("output//grammar.txt", ios::out);
     outfile0 << "***************Grammar Table******************" << endl;
     for (int i = 1; i <= line; i++)
     {
@@ -319,7 +320,7 @@ void initGrammer()
 
     // 输出终结符到文件
     fstream outfile1;
-    outfile1.open("..\\output\\terminal.txt", ios::out);
+    outfile1.open("output//terminal.txt", ios::out);
     outfile1 << "terminal list:" << endl;
     for (int i = 0; i < int(terMap.size()); i++)
     {
@@ -329,7 +330,7 @@ void initGrammer()
 
     // 输出非终结符到文件
     fstream outfile2;
-    outfile2.open("..\\output\\nonterminal.txt", ios::out);
+    outfile2.open("output//nonterminal.txt", ios::out);
     outfile2 << "nonterminal list:" << endl;
     for (int i = 0; i < int(nonTerMap.size()); i++)
     {
@@ -739,7 +740,7 @@ void First()
     }
 
     fstream outfile3;
-    outfile3.open("..\\output\\first.txt", ios::out);
+    outfile3.open("output//first.txt", ios::out);
     outfile3 << "first list:" << endl;
     for (int i = 0; i < int(nonTerMap.size()); i++)
     {
@@ -1079,7 +1080,7 @@ void Follow()
     }
 
     fstream outfile4;
-    outfile4.open("..\\output\\follow.txt", ios::out);
+    outfile4.open("output//follow.txt", ios::out);
     for (int i = 0; i < int(nonTerMap.size()); i++)
     {
         outfile4 << "Follow[" << nonTerMap[i].first << "] = ";
@@ -1173,7 +1174,7 @@ void Select()
 void MTable()
 {
     fstream outfile;
-    outfile.open("..\\output\\preciateTable.csv", ios::out);
+    outfile.open("output//preciateTable.csv", ios::out);
 
     for (int i = 0; i < procNum; i++)
     {
@@ -1361,7 +1362,7 @@ void ShowStack2(SeqStack* S)
 void Analysis()
 {
     //分析结果输出
-    resultfile.open("..\\output\\preciateResult.csv", ios::out);
+    resultfile.open("output//preciateResult.csv", ios::out);
 
     SeqStack s1, s2; // 符号栈中间形式 和 输入串
     int c1, c2;

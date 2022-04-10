@@ -111,10 +111,10 @@ void initLimitMapping();
 void initAddMap();
 
 void initNode(); //初始化结点
-void createNewNode(char const* content,char const* descirbe, int type, int addr, int line); //建立新结点
-void createNewError(char const* content,char const* descirbe, int type,
+void createNewNode(char const* content, char const* descirbe, int type, int addr, int line); //建立新结点
+void createNewError(char const* content, char const* descirbe, int type,
                     int line); //建立报
-int createNewIden(char const* content,char const* descirbe, int type, int line);
+int createNewIden(char const* content, char const* descirbe, int type, int line);
 void printNodeLink();
 void printErrorLink();
 void printIdentLink();
