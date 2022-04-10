@@ -24,7 +24,7 @@ INCLUDES := -I$(INCLUDE_DIR)
 CPPFLAGS = $(INCLUDES) -MMD -MP
 
 # C++ compiler settings
-CXX = g++
+CXX = clang++
 CXXFLAGS = -std=c++11
 WARNINGS = -Wall -Wpedantic -Wextra -Werror
 
